@@ -14,14 +14,21 @@ CONFIG(release, debug|release) {
     config.path = /etc/lightdm
     config.files = resources/lightdm-qt5-swallowed.conf
     desktop.path = $$_PRO_FILE_PWD_
-    #desktop.files = resources/lightdm-qt5-swallowed.desktop
     desktop.commands = cp -pv resources/lightdm-qt5-swallowed.desktop /usr/share/xgreeters/
     desktop.depends = install_target install_config
-
+    settings.path = /usr/share/lightdm-qt5-swallowed
+    settings.files = resources/lightdm-qt5-swallowed.conf
+    settingsfix.path = /usr/bin
+    settingsfix.commands = chown -R lightdm:lightdm /usr/share/lightdm-qt5-swallowed && \
+							chmod -R 0755 /usr/share/lightdm-qt5-swallowed
+	settingsfix.depends = install_settings
+    
     INSTALLS += \
         target \
         config \
-        desktop
+        desktop \
+        settings \
+        settingsfix
 }
 OBJECTS_DIR = $$DESTDIR/obj
 MOC_DIR = $$DESTDIR/moc

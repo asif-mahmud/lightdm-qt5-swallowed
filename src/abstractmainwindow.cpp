@@ -6,8 +6,15 @@
 #include <QDesktopWidget>
 #include <primarywindow.hpp>
 
-QSettings AbstractMainWindow::settings(DEF_CONFIG_FILE, QSettings::NativeFormat);
-
+#ifdef QT_DEBUG
+    QSettings AbstractMainWindow::settings( QSettings::NativeFormat,
+                                            QSettings::UserScope,
+                                            COMPANY_TITLE,
+                                            PRODUCT_NAME);
+#else
+    QSettings AbstractMainWindow::settings(DEF_CONFIG_FILE,
+                                           QSettings::NativeFormat);
+#endif
 
 QVector<AbstractMainWindow *> AbstractMainWindow::windowList;
 QMap<QString, QString> AbstractMainWindow::imageFileMap;
