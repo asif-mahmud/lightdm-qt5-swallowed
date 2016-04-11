@@ -17,6 +17,6 @@
 #define DEF_SETTINGS_FILE_PATH  "/etc/lightdm/lightdm-qt5-swallowed.conf"
 #define GREETER_ERROR_MSG       "Error : "
 #define GREETER_INFO_MSG        "Info : "
-#define DEF_CONFIG_FILE			"/tmp/lightdm-qt5-swallowed.conf"
+#define DEF_CONFIG_FILE         "/run/lightdm/lightdm-qt5-swallowed.conf"
 
 #endif // SETTINGS_HPP

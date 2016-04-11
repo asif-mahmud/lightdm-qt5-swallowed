@@ -6,8 +6,7 @@
 #include <QDesktopWidget>
 #include <primarywindow.hpp>
 
-QSettings AbstractMainWindow::settings(DEF_CONFIG_FILE,
-										QSettings::NativeFormat);
+QSettings AbstractMainWindow::settings(DEF_CONFIG_FILE, QSettings::NativeFormat);
 
 
 QVector<AbstractMainWindow *> AbstractMainWindow::windowList;

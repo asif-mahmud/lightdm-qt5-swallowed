@@ -19,7 +19,7 @@ sudo make install
 After this you have to edit ```/etc/lightdm/lightdm.conf``` file and set ```greeter-session``` to ```lightdm-qt5-swallowed```.
 
 ## Configurations 
-At this point things get a little weird. I could not manage to modify the default ```/etc/lightdm/lightdm-qt5-swallowed.conf``` file from the greeter, so it uses a file under ```/tmp``` to save the configurations. You can modify ```/tmp/lightdm-qt5-swallowed.conf``` to meet your choice. The following options can be used there -
+At this point things get a little weird. I could not manage to modify the default ```/etc/lightdm/lightdm-qt5-swallowed.conf``` file from the greeter, so it uses a file under ```/run/lightdm``` to save the configurations. You can modify ```/run/lightdm/lightdm-qt5-swallowed.conf``` to meet your choice. The following options can be used there -
 
 * imageDir - you can specify any directory where you have put your background images. Images can be put in subdirectories. The greeter enlist them all for you. Currently ```.jpg .jpeg``` and ```.png``` files will be enlisted.
 * imageBaseName - the base file name of the selected background image.
