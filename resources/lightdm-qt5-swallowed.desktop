@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=LightDM Qt5 Swallowed Greeter
+Comment=This runs the Qt LightDM greeter, it should only be run from LightDM
+Exec=/usr/bin/lightdm-qt5-swallowed
+Type=Application
+X-Ubuntu-Gettext-Domain=lightdm

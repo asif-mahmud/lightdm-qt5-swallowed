@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/files">
+        <file>images/dropdown.svg</file>
+        <file>images/fractel.jpg</file>
+        <file>images/restart.png</file>
+        <file>images/shutdown.png</file>
+        <file>fonts/TitilliumWeb.ttf</file>
+    </qresource>
+</RCC>
