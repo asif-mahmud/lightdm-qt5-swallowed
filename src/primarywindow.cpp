@@ -47,7 +47,7 @@ PrimaryWindow::PrimaryWindow(int screenIndex, QWidget * parent) :
     connect(&greeter,SIGNAL(showMessage(QString,QLightDM::Greeter::MessageType)),this,SLOT(on_greeter_message(QString,QLightDM::Greeter::MessageType)));
 
     form.move(AbstractMainWindow::settings.value(KEY_LOGIN_FORM_X_OFFSET,DEF_LOGIN_FORM_X_OFFSET).toInt(),
-              AbstractMainWindow::settings.value(KEY_LOGIN_FORM_X_OFFSET,DEF_LOGIN_FORM_X_OFFSET).toInt());
+              AbstractMainWindow::settings.value(KEY_LOGIN_FORM_Y_OFFSET,DEF_LOGIN_FORM_Y_OFFSET).toInt());
     form.ui->imageComboBox->addItems(AbstractMainWindow::imageFileMap.keys());
     form.ui->imageComboBox->setCurrentText(AbstractMainWindow::settings.value(KEY_IMG_BASE_NAME,
                                                                               DEF_IMG_BASE_NAME).toString());
