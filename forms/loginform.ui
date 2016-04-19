@@ -54,7 +54,7 @@
 }
 
 #users::DropDown {
-	background-image:qurl(':/images/dropdown.svg');
+	background-image:qurl(':/files/images/dropdown.svg');
 }
 
 #passwordInput {

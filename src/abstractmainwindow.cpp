@@ -89,6 +89,9 @@ void AbstractMainWindow::setup_n_start()
             win->set_background(AbstractMainWindow::settings.value(KEY_IMG_ABS_PATH,
                                                                    DEF_IMG_ABS_PATH).toString());
         }
+        //set primary window focused
+        primaryWindow->setFocus(Qt::OtherFocusReason);
+        primaryWindow->activateWindow();
     }else
     {
         qDebug() << "Could not determine Primary Screen. Exitng ...";
@@ -112,7 +115,9 @@ void AbstractMainWindow::set_background(QString image)
     if(imageFile.exists())
     {
         brush.setTexture(QPixmap(image).scaled(QApplication::desktop()->screenGeometry(screenIndex).width(),
-                                               QApplication::desktop()->screenGeometry(screenIndex).height()));
+                                               QApplication::desktop()->screenGeometry(screenIndex).height(),
+                                               Qt::IgnoreAspectRatio,
+                                               Qt::SmoothTransformation));
     }
     palatte.setBrush(this->backgroundRole(),brush);
     this->setPalette(palatte);
