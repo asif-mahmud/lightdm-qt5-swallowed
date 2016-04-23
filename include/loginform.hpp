@@ -16,6 +16,17 @@ class LoginForm : public QWidget
         ~LoginForm();
 
         Ui::LoginForm *ui;
+
+    signals :
+        void positionChanged(int x, int y);
+
+    private:
+        void mousePressEvent(QMouseEvent * event);
+        void mouseMoveEvent(QMouseEvent * event);
+        void mouseReleaseEvent(QMouseEvent * event);
+
+        int mousePressXOrd, mousePressYOrd , parentX, parentY, parentW, parentH;
+        int prevX, prevY;
 };
 
 #endif // LOGINFORM_HPP

@@ -33,6 +33,7 @@ class PrimaryWindow : public AbstractMainWindow
         void on_greeter_message(QString msg,QLightDM::Greeter::MessageType msgType);
         void on_password_given();
         void on_authentication_complete();
+        void on_login_form_position_changed(int x, int y);
 
     private:
         LoginForm form;

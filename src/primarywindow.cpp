@@ -45,6 +45,7 @@ PrimaryWindow::PrimaryWindow(int screenIndex, QWidget * parent) :
     connect(&greeter,SIGNAL(authenticationComplete()),this,SLOT(on_authentication_complete()));
     connect(&greeter,SIGNAL(showPrompt(QString,QLightDM::Greeter::PromptType)),this,SLOT(on_prompted(QString,QLightDM::Greeter::PromptType)));
     connect(&greeter,SIGNAL(showMessage(QString,QLightDM::Greeter::MessageType)),this,SLOT(on_greeter_message(QString,QLightDM::Greeter::MessageType)));
+    connect(&form,SIGNAL(positionChanged(int,int)),this,SLOT(on_login_form_position_changed(int,int)));
 
     form.move(AbstractMainWindow::settings.value(KEY_LOGIN_FORM_X_OFFSET,DEF_LOGIN_FORM_X_OFFSET).toInt(),
               AbstractMainWindow::settings.value(KEY_LOGIN_FORM_Y_OFFSET,DEF_LOGIN_FORM_Y_OFFSET).toInt());
@@ -239,4 +240,11 @@ void PrimaryWindow::on_authentication_complete()
         form.ui->msgLabel->setText("Wrong Password !!!");
         on_current_user_changed(form.ui->users->currentText());
     }
+}
+
+void PrimaryWindow::on_login_form_position_changed(int x, int y)
+{
+    AbstractMainWindow::settings.setValue(KEY_LOGIN_FORM_X_OFFSET,x);
+    AbstractMainWindow::settings.setValue(KEY_LOGIN_FORM_Y_OFFSET,y);
+    form.ui->msgLabel->setText("Login Form's position changed.");
 }

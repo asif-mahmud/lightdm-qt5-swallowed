@@ -29,3 +29,6 @@ At this point things get a little weird. I could not manage to modify the defaul
 * lastUser - last user logged in.
 * username_lastSession - last session the user of username logged in.
 
+## Update
+Now login form can be dragged to any suitable position.
+
