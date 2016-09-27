@@ -3,6 +3,17 @@
 
 #include <QWidget>
 
+
+#ifdef QT_DEBUG
+    /**
+      * Happens to have a window border when the window manager is running
+      * in debug mode.
+      */
+    #define WINDOW_BORDER_OFFSET 30
+#else
+    #define WINDOW_BORDER_OFFSET 0
+#endif
+
 namespace Ui {
     class LoginForm;
 }
